@@ -463,6 +463,7 @@ func (sp *scrapePool) reload(cfg *config.ScrapeConfig) error {
 // Sync converts target groups into actual scrape targets and synchronizes
 // the currently running scraper with the resulting set and returns all scraped and dropped targets.
 func (sp *scrapePool) Sync(tgs []*targetgroup.Group) {
+	fmt.Println("rashmi - in scrape sync")
 	sp.mtx.Lock()
 	defer sp.mtx.Unlock()
 	start := time.Now()
